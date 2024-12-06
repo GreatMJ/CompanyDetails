@@ -25,7 +25,7 @@ public class CompanyService {
     public void addRecord(CompanyRequest companyRequest){
         // validate the code
         String code=companyRequest.getCode();
-        boolean isCodeValid=validateCode(code);
+        boolean isCodeValid=code==null?true:validateCode(code);
 
         if(!isCodeValid) throw new IllegalArgumentException("Code is not valid");
 
